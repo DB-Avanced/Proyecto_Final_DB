@@ -1,0 +1,108 @@
+// ============================================================
+// Proyecto: Transporte Público
+// Base de Datos: MongoDB
+// Colección: eventos_gps (Registra eventos del GPS y telemetría)
+// ============================================================
+
+
+// ============================================================
+// DDL
+// ============================================================
+// MongoDB no requiere un CREATE TABLE como en SQL porque la colección
+// se crea automáticamente al insertar el primer documento.
+
+
+// ============================================================
+// CRUD
+// ============================================================
+
+// ---------------- CREATE ----------------
+
+// Insertar un solo evento
+db.eventos_gps.insert({
+  "gpsId": "GPS-BUS-101",
+  "timestamp": "2026-08-03T06:08:00Z",
+  "location": { "latitude": 9.933333, "longitude": -84.083333 },
+  "telemetry": {
+    "speed": 41,
+    "direction": 182,
+    "engine": "ON",
+    "engineTemperature": 82,
+    "fuel": 65
+  }
+})
+
+// Insertar varios eventos
+db.eventos_gps.insertMany([
+  {
+    "gpsId": "GPS-BUS-101",
+    "timestamp": "2026-08-03T06:20:00Z",
+    "location": { "latitude": 9.936000, "longitude": -84.051000 },
+    "telemetry": { "speed": 38, "direction": 180, "engine": "ON", "engineTemperature": 83, "fuel": 64 }
+  },
+  {
+    "gpsId": "GPS-TRN-201",
+    "timestamp": "2026-08-03T07:32:00Z",
+    "location": { "latitude": 9.965400, "longitude": -84.088700 },
+    "telemetry": { "speed": 55, "direction": 90, "engine": "ON", "engineTemperature": 40, "fuel": 100 }
+  },
+  {
+    "gpsId": "GPS-MET-301",
+    "timestamp": "2026-08-03T08:01:00Z",
+    "location": { "latitude": 9.933333, "longitude": -84.083333 },
+    "telemetry": { "speed": 30, "direction": 270, "engine": "ON", "engineTemperature": 45, "fuel": 100 }
+  }
+])
+
+// ---------------- READ ----------------
+
+// Consultar todos los eventos
+db.eventos_gps.find()
+
+// Consultar los eventos de una unidad específica (por su gpsId)
+db.eventos_gps.find({"gpsId":"GPS-BUS-101"}, ["timestamp", "location"])
+
+// Consultar mostrando solo campos específicos
+db.eventos_gps.find({"gpsId":"GPS-BUS-101"}, ["timestamp":1, "location":1, "telemetry":1, "_id":0])
+
+// Ordenar eventos por fecha, más reciente primero
+db.eventos_gps.find().sort({"timestamp": -1})
+
+// ---------------- UPDATE ----------------
+
+// Actualizar un evento puntual (por su _id generado por Mongo)
+db.eventos_gps.updateOne({"_id": ObjectId("64f1a2b3c4d5e6f7a8b9c0d1")}, {$set:{"telemetry.fuel": 60}})
+
+// ---------------- ÍNDICE ----------------
+
+// Crear índice para acelerar consultas por unidad
+db.eventos_gps.createIndex({"gpsId": 1})
+
+
+// ============================================================
+// Consultas adicionales
+// ============================================================
+
+// Última posición conocida de una unidad (dónde está ahora mismo)
+db.eventos_gps.find({"gpsId":"GPS-BUS-101"}).sort({"timestamp":-1}).limit(1)
+
+// Unidades con combustible bajo
+db.eventos_gps.find({"telemetry.fuel": {$lt: 15}})
+
+// Eventos en un rango de fechas
+db.eventos_gps.find({
+  "timestamp": {$gte: "2026-08-03T00:00:00Z", $lte: "2026-08-03T23:59:59Z"}
+})
+
+// Temperatura de motor elevada (posible sobrecalentamiento)
+db.eventos_gps.find({"telemetry.engineTemperature": {$gt: 95}})
+
+// Contar cuántos eventos ha reportado cada unidad
+db.eventos_gps.aggregate([
+  {"$group": {"_id": "$gpsId", "totalEvents": {"$sum": 1}}}
+])
+
+// Velocidad promedio por unidad
+db.eventos_gps.aggregate([
+  {"$group": {"_id": "$gpsId", "averageSpeed": {"$avg": "$telemetry.speed"}}}
+])
