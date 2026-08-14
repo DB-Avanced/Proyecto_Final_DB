@@ -101,7 +101,7 @@ CREATE TABLE train (
 ) INHERITS (units);
 
 CREATE TABLE metro (
-    [line]         VARCHAR(50) NOT NULL,
+    "line"         VARCHAR(50) NOT NULL,
     num_wagons   INTEGER NOT NULL CHECK (num_wagons > 0),
     PRIMARY KEY (id)
 ) INHERITS (units);
