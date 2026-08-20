@@ -4,8 +4,8 @@
 
 Se configuraron **dos servidores Ubuntu con SQL Server** para trabajar con **Always On Availability Groups**:
 
-* 🟢 **Maestro:** `172.31.41.219` — servidor principal.
-* 🔵 **Esclavo:** `172.31.43.224` — servidor secundario.
+* 🟢 **Maestro:**  — servidor principal.
+* 🔵 **Esclavo:**  — servidor secundario.
 
 Ambos servidores mantienen una copia de la base de datos **`HA_Test`** mediante el grupo de disponibilidad **`HA_Test_AG`**.
 
@@ -15,12 +15,12 @@ Los cambios realizados en el **maestro** se sincronizan con el **esclavo** media
 
 ```text
         MAESTRO
-    172.31.41.219
+    IP PRIVADA
           │
           │ Puerto 5022
           ▼
         ESCLAVO
-    172.31.43.224
+    IP PRIVADA
 ```
 
 Si el maestro falla, el esclavo puede convertirse en el servidor principal mediante un **failover manual**, permitiendo continuar trabajando con la base de datos.
