@@ -5,7 +5,72 @@
 USE MobilityAnalysis;
 GO
 
------------------------------------
+IF NOT EXISTS (SELECT 1 FROM DIM_ROUTE)
+BEGIN
+    INSERT INTO DIM_ROUTE (name, origin, destination, distance_km)
+    VALUES
+        ('Route 1 - Centro', 'Terminal Central', 'Barrio Carmen', 8.5),
+        ('Route 2 - Barranca', 'Terminal Central', 'Barranca', 14.5),
+        ('Route 3 - Chacarita', 'Terminal Central', 'Chacarita', 6.2),
+        ('Route 4 - El Roble', 'Terminal Central', 'El Roble', 11.0),
+        ('Route 5 - Cocal', 'Terminal Central', 'Cocal', 17.8);
+END
+GO
+ 
+IF NOT EXISTS (SELECT 1 FROM DIM_UNIT)
+BEGIN
+    INSERT INTO DIM_UNIT (plate, gps_id, capacity, year, status, unit_type)
+    VALUES
+        ('SJB-1001', 'GPS-001', 40, 2019, 'active', 'bus'),
+        ('SJB-1002', 'GPS-002', 40, 2020, 'active', 'bus'),
+        ('SJB-1003', 'GPS-003', 45, 2018, 'active', 'bus'),
+        ('SJB-1004', 'GPS-004', 45, 2021, 'active', 'bus'),
+        ('SJB-1005', 'GPS-005', 50, 2017, 'maintenance', 'bus'),
+        ('SJB-1006', 'GPS-006', 38, 2022, 'active', 'bus'),
+        ('SJB-1007', 'GPS-007', 40, 2019, 'active', 'bus'),
+        ('SJB-1008', 'GPS-008', 42, 2020, 'active', 'bus');
+END
+GO
+ 
+IF NOT EXISTS (SELECT 1 FROM DIM_DRIVER)
+BEGIN
+    INSERT INTO DIM_DRIVER (name, id_number, license)
+    VALUES
+        ('Juan Perez Mora', '1-1111-1111', 'B2-10001'),
+        ('Maria Rojas Vindas', '1-1111-1112', 'B2-10002'),
+        ('Carlos Solis Vargas', '1-1111-1113', 'B2-10003'),
+        ('Ana Chaves Mendez', '1-1111-1114', 'B2-10004'),
+        ('Luis Araya Duran', '1-1111-1115', 'B2-10005'),
+        ('Sofia Jimenez Leon', '1-1111-1116', 'B2-10006'),
+        ('Pedro Castro Nunez', '1-1111-1117', 'B2-10007'),
+        ('Diana Fallas Ugalde', '1-1111-1118', 'B2-10008'),
+        ('Marco Salas Cordero', '1-1111-1119', 'B2-10009'),
+        ('Karen Brenes Ortiz', '1-1111-1120', 'B2-10010');
+END
+GO
+ 
+IF NOT EXISTS (SELECT 1 FROM DIM_DATE)
+BEGIN
+    ;WITH Calendario AS (
+        SELECT CAST('2025-01-01' AS DATE) AS fecha
+        UNION ALL
+        SELECT DATEADD(DAY, 1, fecha)
+        FROM Calendario
+        WHERE fecha < '2026-12-31'
+    )
+    INSERT INTO DIM_DATE (id_date, full_date, is_weekend, day_of_week, month, year)
+    SELECT
+        CAST(FORMAT(fecha, 'yyyyMMdd') AS INT),
+        fecha,
+        CASE WHEN DATENAME(WEEKDAY, fecha) IN ('Saturday','Sunday') THEN 1 ELSE 0 END,
+        DATENAME(WEEKDAY, fecha),
+        MONTH(fecha),
+        YEAR(fecha)
+    FROM Calendario
+    OPTION (MAXRECURSION 800);
+END
+GO
+
 -- PASO 0: limpiar posibles duplicados en DIM_ROUTE y DIM_DRIVER
 
 ;WITH RouteDedup AS (
