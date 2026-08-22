@@ -1,0 +1,607 @@
+// ============================================================
+// 100 inserciones de eventos GPS
+// Cada gpsId es UNICO (gps01 - gps100), ya que la colección
+// funciona como inventario/registro de cada unidad GPS de la empresa
+// ============================================================
+db.eventos_gps.insertMany([
+    {
+      "gpsId": "gps01",
+      "timestamp": "2026-08-05T02:12:00Z",
+      "location": { "latitude": 10.039573, "longitude": -84.101294 },
+      "telemetry": { "speed": 6, "direction": 37, "engine": "ON", "engineTemperature": 81, "fuel": 79 }
+    },
+    {
+      "gpsId": "gps02",
+      "timestamp": "2026-08-03T13:55:00Z",
+      "location": { "latitude": 10.031941, "longitude": -84.146325 },
+      "telemetry": { "speed": 11, "direction": 222, "engine": "OFF", "engineTemperature": 43, "fuel": 35 }
+    },
+    {
+      "gpsId": "gps03",
+      "timestamp": "2026-08-03T18:23:00Z",
+      "location": { "latitude": 9.960209, "longitude": -84.185222 },
+      "telemetry": { "speed": 72, "direction": 63, "engine": "ON", "engineTemperature": 42, "fuel": 78 }
+    },
+    {
+      "gpsId": "gps04",
+      "timestamp": "2026-08-05T12:09:00Z",
+      "location": { "latitude": 9.859918, "longitude": -84.14473 },
+      "telemetry": { "speed": 71, "direction": 68, "engine": "ON", "engineTemperature": 88, "fuel": 23 }
+    },
+    {
+      "gpsId": "gps05",
+      "timestamp": "2026-08-03T22:04:00Z",
+      "location": { "latitude": 9.964183, "longitude": -84.059936 },
+      "telemetry": { "speed": 23, "direction": 52, "engine": "ON", "engineTemperature": 82, "fuel": 17 }
+    },
+    {
+      "gpsId": "gps06",
+      "timestamp": "2026-08-03T14:34:00Z",
+      "location": { "latitude": 9.962874, "longitude": -84.045248 },
+      "telemetry": { "speed": 63, "direction": 348, "engine": "OFF", "engineTemperature": 75, "fuel": 64 }
+    },
+    {
+      "gpsId": "gps07",
+      "timestamp": "2026-08-05T19:52:00Z",
+      "location": { "latitude": 9.922316, "longitude": -84.137893 },
+      "telemetry": { "speed": 23, "direction": 357, "engine": "ON", "engineTemperature": 45, "fuel": 78 }
+    },
+    {
+      "gpsId": "gps08",
+      "timestamp": "2026-08-04T22:59:00Z",
+      "location": { "latitude": 9.955039, "longitude": -83.981216 },
+      "telemetry": { "speed": 57, "direction": 147, "engine": "ON", "engineTemperature": 50, "fuel": 70 }
+    },
+    {
+      "gpsId": "gps09",
+      "timestamp": "2026-08-05T15:05:00Z",
+      "location": { "latitude": 9.882992, "longitude": -84.114486 },
+      "telemetry": { "speed": 62, "direction": 215, "engine": "ON", "engineTemperature": 44, "fuel": 76 }
+    },
+    {
+      "gpsId": "gps10",
+      "timestamp": "2026-08-05T00:50:00Z",
+      "location": { "latitude": 9.918024, "longitude": -84.112455 },
+      "telemetry": { "speed": 63, "direction": 296, "engine": "OFF", "engineTemperature": 43, "fuel": 16 }
+    },
+    {
+      "gpsId": "gps11",
+      "timestamp": "2026-08-04T18:51:00Z",
+      "location": { "latitude": 9.94482, "longitude": -84.033962 },
+      "telemetry": { "speed": 7, "direction": 359, "engine": "ON", "engineTemperature": 92, "fuel": 41 }
+    },
+    {
+      "gpsId": "gps12",
+      "timestamp": "2026-08-05T10:40:00Z",
+      "location": { "latitude": 10.027408, "longitude": -84.113249 },
+      "telemetry": { "speed": 59, "direction": 181, "engine": "ON", "engineTemperature": 49, "fuel": 68 }
+    },
+    {
+      "gpsId": "gps13",
+      "timestamp": "2026-08-03T14:02:00Z",
+      "location": { "latitude": 9.893642, "longitude": -84.128142 },
+      "telemetry": { "speed": 31, "direction": 203, "engine": "OFF", "engineTemperature": 98, "fuel": 15 }
+    },
+    {
+      "gpsId": "gps14",
+      "timestamp": "2026-08-04T04:42:00Z",
+      "location": { "latitude": 9.939837, "longitude": -84.06264 },
+      "telemetry": { "speed": 17, "direction": 220, "engine": "ON", "engineTemperature": 88, "fuel": 50 }
+    },
+    {
+      "gpsId": "gps15",
+      "timestamp": "2026-08-05T09:56:00Z",
+      "location": { "latitude": 10.041546, "longitude": -84.16227 },
+      "telemetry": { "speed": 22, "direction": 77, "engine": "ON", "engineTemperature": 64, "fuel": 6 }
+    },
+    {
+      "gpsId": "gps16",
+      "timestamp": "2026-08-06T00:12:00Z",
+      "location": { "latitude": 10.016219, "longitude": -84.154414 },
+      "telemetry": { "speed": 36, "direction": 2, "engine": "ON", "engineTemperature": 88, "fuel": 73 }
+    },
+    {
+      "gpsId": "gps17",
+      "timestamp": "2026-08-05T08:24:00Z",
+      "location": { "latitude": 9.971962, "longitude": -84.120347 },
+      "telemetry": { "speed": 16, "direction": 353, "engine": "ON", "engineTemperature": 93, "fuel": 92 }
+    },
+    {
+      "gpsId": "gps18",
+      "timestamp": "2026-08-05T11:34:00Z",
+      "location": { "latitude": 9.929614, "longitude": -84.10147 },
+      "telemetry": { "speed": 61, "direction": 324, "engine": "OFF", "engineTemperature": 42, "fuel": 29 }
+    },
+    {
+      "gpsId": "gps19",
+      "timestamp": "2026-08-03T15:11:00Z",
+      "location": { "latitude": 10.046934, "longitude": -84.089843 },
+      "telemetry": { "speed": 14, "direction": 174, "engine": "ON", "engineTemperature": 48, "fuel": 5 }
+    },
+    {
+      "gpsId": "gps20",
+      "timestamp": "2026-08-04T02:39:00Z",
+      "location": { "latitude": 9.957324, "longitude": -83.962763 },
+      "telemetry": { "speed": 78, "direction": 13, "engine": "ON", "engineTemperature": 61, "fuel": 83 }
+    },
+    {
+      "gpsId": "gps21",
+      "timestamp": "2026-08-05T09:22:00Z",
+      "location": { "latitude": 9.87971, "longitude": -84.136936 },
+      "telemetry": { "speed": 44, "direction": 308, "engine": "ON", "engineTemperature": 95, "fuel": 20 }
+    },
+    {
+      "gpsId": "gps22",
+      "timestamp": "2026-08-03T21:44:00Z",
+      "location": { "latitude": 10.019787, "longitude": -83.951724 },
+      "telemetry": { "speed": 59, "direction": 245, "engine": "OFF", "engineTemperature": 74, "fuel": 15 }
+    },
+    {
+      "gpsId": "gps23",
+      "timestamp": "2026-08-04T01:40:00Z",
+      "location": { "latitude": 9.870438, "longitude": -84.114341 },
+      "telemetry": { "speed": 33, "direction": 245, "engine": "ON", "engineTemperature": 101, "fuel": 7 }
+    },
+    {
+      "gpsId": "gps24",
+      "timestamp": "2026-08-04T10:01:00Z",
+      "location": { "latitude": 10.040197, "longitude": -84.067936 },
+      "telemetry": { "speed": 18, "direction": 353, "engine": "ON", "engineTemperature": 102, "fuel": 43 }
+    },
+    {
+      "gpsId": "gps25",
+      "timestamp": "2026-08-03T18:25:00Z",
+      "location": { "latitude": 9.989239, "longitude": -84.134721 },
+      "telemetry": { "speed": 46, "direction": 85, "engine": "ON", "engineTemperature": 63, "fuel": 73 }
+    },
+    {
+      "gpsId": "gps26",
+      "timestamp": "2026-08-06T02:38:00Z",
+      "location": { "latitude": 9.915933, "longitude": -84.14424 },
+      "telemetry": { "speed": 24, "direction": 122, "engine": "OFF", "engineTemperature": 64, "fuel": 30 }
+    },
+    {
+      "gpsId": "gps27",
+      "timestamp": "2026-08-06T04:40:00Z",
+      "location": { "latitude": 9.948556, "longitude": -84.017249 },
+      "telemetry": { "speed": 3, "direction": 143, "engine": "OFF", "engineTemperature": 68, "fuel": 29 }
+    },
+    {
+      "gpsId": "gps28",
+      "timestamp": "2026-08-05T05:00:00Z",
+      "location": { "latitude": 9.939446, "longitude": -83.965745 },
+      "telemetry": { "speed": 44, "direction": 186, "engine": "ON", "engineTemperature": 63, "fuel": 18 }
+    },
+    {
+      "gpsId": "gps29",
+      "timestamp": "2026-08-04T12:58:00Z",
+      "location": { "latitude": 9.944016, "longitude": -84.115566 },
+      "telemetry": { "speed": 61, "direction": 319, "engine": "ON", "engineTemperature": 96, "fuel": 88 }
+    },
+    {
+      "gpsId": "gps30",
+      "timestamp": "2026-08-05T04:58:00Z",
+      "location": { "latitude": 10.009929, "longitude": -84.178805 },
+      "telemetry": { "speed": 15, "direction": 198, "engine": "ON", "engineTemperature": 96, "fuel": 27 }
+    },
+    {
+      "gpsId": "gps31",
+      "timestamp": "2026-08-05T17:14:00Z",
+      "location": { "latitude": 10.007827, "longitude": -84.116871 },
+      "telemetry": { "speed": 50, "direction": 237, "engine": "OFF", "engineTemperature": 45, "fuel": 97 }
+    },
+    {
+      "gpsId": "gps32",
+      "timestamp": "2026-08-04T03:41:00Z",
+      "location": { "latitude": 9.884001, "longitude": -84.16824 },
+      "telemetry": { "speed": 19, "direction": 302, "engine": "OFF", "engineTemperature": 53, "fuel": 83 }
+    },
+    {
+      "gpsId": "gps33",
+      "timestamp": "2026-08-05T22:45:00Z",
+      "location": { "latitude": 9.981454, "longitude": -84.112398 },
+      "telemetry": { "speed": 70, "direction": 280, "engine": "ON", "engineTemperature": 37, "fuel": 6 }
+    },
+    {
+      "gpsId": "gps34",
+      "timestamp": "2026-08-03T20:01:00Z",
+      "location": { "latitude": 9.955316, "longitude": -83.966594 },
+      "telemetry": { "speed": 55, "direction": 99, "engine": "ON", "engineTemperature": 38, "fuel": 37 }
+    },
+    {
+      "gpsId": "gps35",
+      "timestamp": "2026-08-04T11:03:00Z",
+      "location": { "latitude": 9.908593, "longitude": -84.139865 },
+      "telemetry": { "speed": 75, "direction": 166, "engine": "ON", "engineTemperature": 104, "fuel": 58 }
+    },
+    {
+      "gpsId": "gps36",
+      "timestamp": "2026-08-03T23:53:00Z",
+      "location": { "latitude": 9.862181, "longitude": -84.015019 },
+      "telemetry": { "speed": 58, "direction": 339, "engine": "OFF", "engineTemperature": 99, "fuel": 21 }
+    },
+    {
+      "gpsId": "gps37",
+      "timestamp": "2026-08-04T02:43:00Z",
+      "location": { "latitude": 9.954701, "longitude": -84.195324 },
+      "telemetry": { "speed": 56, "direction": 93, "engine": "ON", "engineTemperature": 54, "fuel": 27 }
+    },
+    {
+      "gpsId": "gps38",
+      "timestamp": "2026-08-04T01:19:00Z",
+      "location": { "latitude": 9.944699, "longitude": -84.018702 },
+      "telemetry": { "speed": 71, "direction": 31, "engine": "ON", "engineTemperature": 101, "fuel": 72 }
+    },
+    {
+      "gpsId": "gps39",
+      "timestamp": "2026-08-05T23:52:00Z",
+      "location": { "latitude": 10.006854, "longitude": -84.173473 },
+      "telemetry": { "speed": 71, "direction": 29, "engine": "ON", "engineTemperature": 59, "fuel": 40 }
+    },
+    {
+      "gpsId": "gps40",
+      "timestamp": "2026-08-03T11:45:00Z",
+      "location": { "latitude": 10.004452, "longitude": -84.073072 },
+      "telemetry": { "speed": 71, "direction": 14, "engine": "ON", "engineTemperature": 91, "fuel": 46 }
+    },
+    {
+      "gpsId": "gps41",
+      "timestamp": "2026-08-06T03:01:00Z",
+      "location": { "latitude": 9.971228, "longitude": -84.150149 },
+      "telemetry": { "speed": 35, "direction": 231, "engine": "OFF", "engineTemperature": 99, "fuel": 36 }
+    },
+    {
+      "gpsId": "gps42",
+      "timestamp": "2026-08-06T05:26:00Z",
+      "location": { "latitude": 10.025307, "longitude": -83.964455 },
+      "telemetry": { "speed": 33, "direction": 286, "engine": "ON", "engineTemperature": 92, "fuel": 22 }
+    },
+    {
+      "gpsId": "gps43",
+      "timestamp": "2026-08-05T14:53:00Z",
+      "location": { "latitude": 9.874324, "longitude": -84.08947 },
+      "telemetry": { "speed": 9, "direction": 343, "engine": "ON", "engineTemperature": 89, "fuel": 14 }
+    },
+    {
+      "gpsId": "gps44",
+      "timestamp": "2026-08-04T11:02:00Z",
+      "location": { "latitude": 9.983894, "longitude": -84.004016 },
+      "telemetry": { "speed": 19, "direction": 329, "engine": "ON", "engineTemperature": 53, "fuel": 37 }
+    },
+    {
+      "gpsId": "gps45",
+      "timestamp": "2026-08-04T00:44:00Z",
+      "location": { "latitude": 10.043509, "longitude": -84.145103 },
+      "telemetry": { "speed": 12, "direction": 203, "engine": "OFF", "engineTemperature": 55, "fuel": 90 }
+    },
+    {
+      "gpsId": "gps46",
+      "timestamp": "2026-08-04T12:32:00Z",
+      "location": { "latitude": 9.882293, "longitude": -84.09212 },
+      "telemetry": { "speed": 65, "direction": 206, "engine": "ON", "engineTemperature": 88, "fuel": 30 }
+    },
+    {
+      "gpsId": "gps47",
+      "timestamp": "2026-08-05T06:41:00Z",
+      "location": { "latitude": 9.913705, "longitude": -84.019462 },
+      "telemetry": { "speed": 2, "direction": 173, "engine": "OFF", "engineTemperature": 91, "fuel": 95 }
+    },
+    {
+      "gpsId": "gps48",
+      "timestamp": "2026-08-03T08:28:00Z",
+      "location": { "latitude": 9.926869, "longitude": -84.070642 },
+      "telemetry": { "speed": 37, "direction": 262, "engine": "ON", "engineTemperature": 49, "fuel": 34 }
+    },
+    {
+      "gpsId": "gps49",
+      "timestamp": "2026-08-03T20:18:00Z",
+      "location": { "latitude": 9.866812, "longitude": -84.13202 },
+      "telemetry": { "speed": 23, "direction": 138, "engine": "ON", "engineTemperature": 89, "fuel": 91 }
+    },
+    {
+      "gpsId": "gps50",
+      "timestamp": "2026-08-04T17:18:00Z",
+      "location": { "latitude": 9.93119, "longitude": -84.06585 },
+      "telemetry": { "speed": 65, "direction": 292, "engine": "OFF", "engineTemperature": 76, "fuel": 16 }
+    },
+    {
+      "gpsId": "gps51",
+      "timestamp": "2026-08-04T20:06:00Z",
+      "location": { "latitude": 9.861505, "longitude": -84.027949 },
+      "telemetry": { "speed": 54, "direction": 37, "engine": "ON", "engineTemperature": 37, "fuel": 86 }
+    },
+    {
+      "gpsId": "gps52",
+      "timestamp": "2026-08-03T18:05:00Z",
+      "location": { "latitude": 10.010326, "longitude": -84.179064 },
+      "telemetry": { "speed": 28, "direction": 34, "engine": "ON", "engineTemperature": 50, "fuel": 63 }
+    },
+    {
+      "gpsId": "gps53",
+      "timestamp": "2026-08-03T07:34:00Z",
+      "location": { "latitude": 9.91783, "longitude": -84.061734 },
+      "telemetry": { "speed": 34, "direction": 318, "engine": "ON", "engineTemperature": 40, "fuel": 72 }
+    },
+    {
+      "gpsId": "gps54",
+      "timestamp": "2026-08-04T14:33:00Z",
+      "location": { "latitude": 10.037625, "longitude": -83.957697 },
+      "telemetry": { "speed": 33, "direction": 25, "engine": "ON", "engineTemperature": 60, "fuel": 44 }
+    },
+    {
+      "gpsId": "gps55",
+      "timestamp": "2026-08-04T23:38:00Z",
+      "location": { "latitude": 9.956217, "longitude": -84.148532 },
+      "telemetry": { "speed": 57, "direction": 256, "engine": "ON", "engineTemperature": 69, "fuel": 49 }
+    },
+    {
+      "gpsId": "gps56",
+      "timestamp": "2026-08-03T08:28:00Z",
+      "location": { "latitude": 10.0489, "longitude": -84.190763 },
+      "telemetry": { "speed": 2, "direction": 258, "engine": "ON", "engineTemperature": 100, "fuel": 65 }
+    },
+    {
+      "gpsId": "gps57",
+      "timestamp": "2026-08-04T15:32:00Z",
+      "location": { "latitude": 10.036929, "longitude": -84.17343 },
+      "telemetry": { "speed": 55, "direction": 336, "engine": "OFF", "engineTemperature": 104, "fuel": 55 }
+    },
+    {
+      "gpsId": "gps58",
+      "timestamp": "2026-08-06T03:10:00Z",
+      "location": { "latitude": 9.911557, "longitude": -84.146205 },
+      "telemetry": { "speed": 29, "direction": 175, "engine": "ON", "engineTemperature": 52, "fuel": 56 }
+    },
+    {
+      "gpsId": "gps59",
+      "timestamp": "2026-08-05T05:27:00Z",
+      "location": { "latitude": 10.046376, "longitude": -83.990753 },
+      "telemetry": { "speed": 1, "direction": 36, "engine": "ON", "engineTemperature": 90, "fuel": 25 }
+    },
+    {
+      "gpsId": "gps60",
+      "timestamp": "2026-08-03T13:33:00Z",
+      "location": { "latitude": 9.866897, "longitude": -83.989683 },
+      "telemetry": { "speed": 64, "direction": 343, "engine": "ON", "engineTemperature": 66, "fuel": 93 }
+    },
+    {
+      "gpsId": "gps61",
+      "timestamp": "2026-08-04T22:00:00Z",
+      "location": { "latitude": 9.859047, "longitude": -84.153662 },
+      "telemetry": { "speed": 34, "direction": 228, "engine": "ON", "engineTemperature": 68, "fuel": 51 }
+    },
+    {
+      "gpsId": "gps62",
+      "timestamp": "2026-08-05T02:54:00Z",
+      "location": { "latitude": 10.044525, "longitude": -84.063232 },
+      "telemetry": { "speed": 31, "direction": 17, "engine": "ON", "engineTemperature": 62, "fuel": 50 }
+    },
+    {
+      "gpsId": "gps63",
+      "timestamp": "2026-08-04T06:58:00Z",
+      "location": { "latitude": 9.850214, "longitude": -84.104593 },
+      "telemetry": { "speed": 60, "direction": 142, "engine": "ON", "engineTemperature": 66, "fuel": 69 }
+    },
+    {
+      "gpsId": "gps64",
+      "timestamp": "2026-08-03T06:40:00Z",
+      "location": { "latitude": 9.86817, "longitude": -83.995739 },
+      "telemetry": { "speed": 18, "direction": 204, "engine": "ON", "engineTemperature": 85, "fuel": 7 }
+    },
+    {
+      "gpsId": "gps65",
+      "timestamp": "2026-08-04T22:54:00Z",
+      "location": { "latitude": 9.910849, "longitude": -84.141798 },
+      "telemetry": { "speed": 74, "direction": 270, "engine": "ON", "engineTemperature": 84, "fuel": 46 }
+    },
+    {
+      "gpsId": "gps66",
+      "timestamp": "2026-08-06T01:28:00Z",
+      "location": { "latitude": 9.879893, "longitude": -84.018961 },
+      "telemetry": { "speed": 18, "direction": 22, "engine": "OFF", "engineTemperature": 99, "fuel": 22 }
+    },
+    {
+      "gpsId": "gps67",
+      "timestamp": "2026-08-06T05:30:00Z",
+      "location": { "latitude": 10.000573, "longitude": -84.05788 },
+      "telemetry": { "speed": 2, "direction": 351, "engine": "ON", "engineTemperature": 45, "fuel": 8 }
+    },
+    {
+      "gpsId": "gps68",
+      "timestamp": "2026-08-03T11:42:00Z",
+      "location": { "latitude": 9.876619, "longitude": -84.109823 },
+      "telemetry": { "speed": 13, "direction": 192, "engine": "OFF", "engineTemperature": 41, "fuel": 85 }
+    },
+    {
+      "gpsId": "gps69",
+      "timestamp": "2026-08-03T08:34:00Z",
+      "location": { "latitude": 9.975245, "longitude": -84.029834 },
+      "telemetry": { "speed": 62, "direction": 135, "engine": "ON", "engineTemperature": 93, "fuel": 13 }
+    },
+    {
+      "gpsId": "gps70",
+      "timestamp": "2026-08-06T02:40:00Z",
+      "location": { "latitude": 10.029572, "longitude": -84.177015 },
+      "telemetry": { "speed": 67, "direction": 33, "engine": "OFF", "engineTemperature": 67, "fuel": 14 }
+    },
+    {
+      "gpsId": "gps71",
+      "timestamp": "2026-08-04T18:15:00Z",
+      "location": { "latitude": 9.896957, "longitude": -84.01089 },
+      "telemetry": { "speed": 29, "direction": 332, "engine": "OFF", "engineTemperature": 98, "fuel": 53 }
+    },
+    {
+      "gpsId": "gps72",
+      "timestamp": "2026-08-03T16:28:00Z",
+      "location": { "latitude": 9.945802, "longitude": -84.029076 },
+      "telemetry": { "speed": 5, "direction": 315, "engine": "ON", "engineTemperature": 44, "fuel": 81 }
+    },
+    {
+      "gpsId": "gps73",
+      "timestamp": "2026-08-04T02:07:00Z",
+      "location": { "latitude": 9.916355, "longitude": -84.037116 },
+      "telemetry": { "speed": 38, "direction": 318, "engine": "ON", "engineTemperature": 36, "fuel": 66 }
+    },
+    {
+      "gpsId": "gps74",
+      "timestamp": "2026-08-03T14:16:00Z",
+      "location": { "latitude": 9.94716, "longitude": -83.956873 },
+      "telemetry": { "speed": 12, "direction": 354, "engine": "ON", "engineTemperature": 97, "fuel": 42 }
+    },
+    {
+      "gpsId": "gps75",
+      "timestamp": "2026-08-06T04:31:00Z",
+      "location": { "latitude": 9.907109, "longitude": -84.083526 },
+      "telemetry": { "speed": 15, "direction": 281, "engine": "ON", "engineTemperature": 74, "fuel": 15 }
+    },
+    {
+      "gpsId": "gps76",
+      "timestamp": "2026-08-05T22:34:00Z",
+      "location": { "latitude": 9.853501, "longitude": -84.085257 },
+      "telemetry": { "speed": 64, "direction": 230, "engine": "ON", "engineTemperature": 84, "fuel": 31 }
+    },
+    {
+      "gpsId": "gps77",
+      "timestamp": "2026-08-04T10:46:00Z",
+      "location": { "latitude": 9.864923, "longitude": -84.177424 },
+      "telemetry": { "speed": 67, "direction": 134, "engine": "ON", "engineTemperature": 51, "fuel": 82 }
+    },
+    {
+      "gpsId": "gps78",
+      "timestamp": "2026-08-06T03:27:00Z",
+      "location": { "latitude": 9.905914, "longitude": -84.171831 },
+      "telemetry": { "speed": 46, "direction": 118, "engine": "OFF", "engineTemperature": 97, "fuel": 55 }
+    },
+    {
+      "gpsId": "gps79",
+      "timestamp": "2026-08-03T09:23:00Z",
+      "location": { "latitude": 9.881813, "longitude": -83.96251 },
+      "telemetry": { "speed": 57, "direction": 207, "engine": "ON", "engineTemperature": 53, "fuel": 58 }
+    },
+    {
+      "gpsId": "gps80",
+      "timestamp": "2026-08-05T04:57:00Z",
+      "location": { "latitude": 9.925221, "longitude": -84.169773 },
+      "telemetry": { "speed": 42, "direction": 0, "engine": "ON", "engineTemperature": 78, "fuel": 55 }
+    },
+    {
+      "gpsId": "gps81",
+      "timestamp": "2026-08-03T22:23:00Z",
+      "location": { "latitude": 10.037976, "longitude": -84.151065 },
+      "telemetry": { "speed": 1, "direction": 148, "engine": "ON", "engineTemperature": 82, "fuel": 13 }
+    },
+    {
+      "gpsId": "gps82",
+      "timestamp": "2026-08-05T11:38:00Z",
+      "location": { "latitude": 9.928032, "longitude": -83.982507 },
+      "telemetry": { "speed": 9, "direction": 184, "engine": "OFF", "engineTemperature": 70, "fuel": 11 }
+    },
+    {
+      "gpsId": "gps83",
+      "timestamp": "2026-08-04T20:18:00Z",
+      "location": { "latitude": 9.870342, "longitude": -83.991331 },
+      "telemetry": { "speed": 36, "direction": 325, "engine": "ON", "engineTemperature": 66, "fuel": 39 }
+    },
+    {
+      "gpsId": "gps84",
+      "timestamp": "2026-08-05T17:33:00Z",
+      "location": { "latitude": 9.952193, "longitude": -84.152538 },
+      "telemetry": { "speed": 47, "direction": 219, "engine": "ON", "engineTemperature": 86, "fuel": 75 }
+    },
+    {
+      "gpsId": "gps85",
+      "timestamp": "2026-08-04T09:46:00Z",
+      "location": { "latitude": 9.993915, "longitude": -84.187631 },
+      "telemetry": { "speed": 52, "direction": 230, "engine": "ON", "engineTemperature": 71, "fuel": 67 }
+    },
+    {
+      "gpsId": "gps86",
+      "timestamp": "2026-08-03T12:41:00Z",
+      "location": { "latitude": 10.032381, "longitude": -84.062473 },
+      "telemetry": { "speed": 21, "direction": 241, "engine": "OFF", "engineTemperature": 78, "fuel": 41 }
+    },
+    {
+      "gpsId": "gps87",
+      "timestamp": "2026-08-04T22:39:00Z",
+      "location": { "latitude": 9.901149, "longitude": -84.015314 },
+      "telemetry": { "speed": 33, "direction": 207, "engine": "ON", "engineTemperature": 73, "fuel": 66 }
+    },
+    {
+      "gpsId": "gps88",
+      "timestamp": "2026-08-05T11:50:00Z",
+      "location": { "latitude": 9.873949, "longitude": -84.039199 },
+      "telemetry": { "speed": 9, "direction": 106, "engine": "OFF", "engineTemperature": 105, "fuel": 33 }
+    },
+    {
+      "gpsId": "gps89",
+      "timestamp": "2026-08-05T19:50:00Z",
+      "location": { "latitude": 10.031252, "longitude": -83.950881 },
+      "telemetry": { "speed": 57, "direction": 218, "engine": "ON", "engineTemperature": 105, "fuel": 29 }
+    },
+    {
+      "gpsId": "gps90",
+      "timestamp": "2026-08-04T15:19:00Z",
+      "location": { "latitude": 9.868143, "longitude": -84.114511 },
+      "telemetry": { "speed": 11, "direction": 163, "engine": "ON", "engineTemperature": 82, "fuel": 38 }
+    },
+    {
+      "gpsId": "gps91",
+      "timestamp": "2026-08-04T09:35:00Z",
+      "location": { "latitude": 10.02745, "longitude": -84.012586 },
+      "telemetry": { "speed": 52, "direction": 196, "engine": "OFF", "engineTemperature": 102, "fuel": 31 }
+    },
+    {
+      "gpsId": "gps92",
+      "timestamp": "2026-08-05T09:27:00Z",
+      "location": { "latitude": 9.904048, "longitude": -84.011972 },
+      "telemetry": { "speed": 63, "direction": 142, "engine": "ON", "engineTemperature": 51, "fuel": 92 }
+    },
+    {
+      "gpsId": "gps93",
+      "timestamp": "2026-08-06T02:43:00Z",
+      "location": { "latitude": 9.955845, "longitude": -84.002422 },
+      "telemetry": { "speed": 27, "direction": 47, "engine": "ON", "engineTemperature": 66, "fuel": 54 }
+    },
+    {
+      "gpsId": "gps94",
+      "timestamp": "2026-08-05T12:34:00Z",
+      "location": { "latitude": 9.979158, "longitude": -84.092041 },
+      "telemetry": { "speed": 39, "direction": 11, "engine": "ON", "engineTemperature": 39, "fuel": 59 }
+    },
+    {
+      "gpsId": "gps95",
+      "timestamp": "2026-08-05T22:37:00Z",
+      "location": { "latitude": 10.043656, "longitude": -84.077544 },
+      "telemetry": { "speed": 9, "direction": 200, "engine": "OFF", "engineTemperature": 92, "fuel": 36 }
+    },
+    {
+      "gpsId": "gps96",
+      "timestamp": "2026-08-03T20:53:00Z",
+      "location": { "latitude": 9.89476, "longitude": -84.161983 },
+      "telemetry": { "speed": 13, "direction": 358, "engine": "OFF", "engineTemperature": 45, "fuel": 75 }
+    },
+    {
+      "gpsId": "gps97",
+      "timestamp": "2026-08-03T11:23:00Z",
+      "location": { "latitude": 9.850273, "longitude": -84.168587 },
+      "telemetry": { "speed": 72, "direction": 19, "engine": "ON", "engineTemperature": 51, "fuel": 85 }
+    },
+    {
+      "gpsId": "gps98",
+      "timestamp": "2026-08-04T16:22:00Z",
+      "location": { "latitude": 9.955651, "longitude": -84.090642 },
+      "telemetry": { "speed": 14, "direction": 50, "engine": "ON", "engineTemperature": 73, "fuel": 72 }
+    },
+    {
+      "gpsId": "gps99",
+      "timestamp": "2026-08-04T08:10:00Z",
+      "location": { "latitude": 9.927616, "longitude": -84.144104 },
+      "telemetry": { "speed": 76, "direction": 0, "engine": "ON", "engineTemperature": 103, "fuel": 43 }
+    },
+    {
+      "gpsId": "gps100",
+      "timestamp": "2026-08-05T20:53:00Z",
+      "location": { "latitude": 9.905721, "longitude": -84.120911 },
+      "telemetry": { "speed": 31, "direction": 243, "engine": "ON", "engineTemperature": 105, "fuel": 36 }
+    }
+])
